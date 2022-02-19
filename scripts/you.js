@@ -31,7 +31,6 @@ faudio.addEventListener('timeupdate', function() {
     }
 }
 );
-/* [Oct 2021] End part. */
 
 function bookmark() {
 	if ((navigator.appName == "Microsoft Internet Explorer") && (parseInt(navigator.appVersion) >= 4)) {
@@ -90,11 +89,19 @@ function playBall() {
     xPos += xOff;
     yPos += yOff;
     
-	if (xPos > screen.width - 357) newXlt();    
-	if (xPos < 0) newXrt();
+	if (xPos > screen.width - 357) {
+        newXlt();
+    }
+	else if (xPos < 0) {
+        newXrt();
+    }
     
-	if (yPos > screen.height - 330) newYup(); 		
-	if (yPos < 0) newYdn();
+	if (yPos > screen.height - 330) {
+        newYup();
+    }
+	else if (yPos < 0) {
+        newYdn();
+    }
     
 	if (flagRun == 1) {
         window.moveTo(xPos, yPos);
@@ -119,7 +126,6 @@ window.onmouseout = function () {
 };
 
 window.oncontextmenu = function() {
-	
 	return false;
 }
 
