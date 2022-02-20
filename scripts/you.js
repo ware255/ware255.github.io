@@ -56,7 +56,7 @@ function openWindow(url) {
 }
 
 function proCreate() {	
-	for (var i = 0; i < 10; i++) {
+	for (var i = 0; i < 5; i++) {
 		openWindow('lol.html');
 	}
 }
