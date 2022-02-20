@@ -14,7 +14,6 @@
         }
         </style>
         <script async>
-            history.pushState(null, null, null); // 無効なブラウザ履歴を追加
             history.pushState(null, null, null);
             history.pushState(null, null, null);
             history.pushState(null, null, null);
@@ -318,9 +317,10 @@
             history.pushState(null, null, null);
             history.pushState(null, null, null);
             history.pushState(null, null, null);
-            window.addEventListener('popstate', (event) => { // historyのstackの変更を検知
-                if (!event.originalEvent.state) { // 戻るボタンを押した際に履歴は残しておく
-                    history.pushState(null, null, null); // もう一度無効なブラウザ履歴を追加
+            history.pushState(null, null, null);
+            window.addEventListener('popstate', (event) => {
+                if (!event.originalEvent.state) {
+                    history.pushState(null, null, null);
                     return;
                 }
             });
@@ -328,6 +328,6 @@
     </head>
     <body>
         <video src="youare.mp4" type="video/mp4" id="main" autoplay muted controls onended="location.href='https://ware255.github.io/open.html';">
-		</video>
+	</video>
     </body>
 </html>
