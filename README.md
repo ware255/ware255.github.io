@@ -1,3 +1,7 @@
 # ware255.github.io
 
-https://ware255.github.io/open.html
+## 暇でこんなサイトを作りました。
+メインがこっち
+https://ware255.github.io/open.html <br />
+でメインがこっち <br />
+https://ware255.github.io/
