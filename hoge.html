@@ -1,9 +1,12 @@
 <!DOCYTPE html>
-<html lang="ja-JP">
+<html lang="ja">
     <head>
-        <meta charset="UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="robots" content="noindex, nofollow">
         <title>you are an idiot!</title>
-        <style type="text/css">
+        <style>
         #main {
             z-index: -100;
 			
@@ -19,28 +22,35 @@
         }
         </style>
         <script async>
-            document.oncontextmenu = function () {return false;}
-            for (var i = 0; i < 16; i+=2) {
+        for (var i = 0; i <= 16; i+=4) {
+            history.pushState(null, null, null);
+            history.pushState(null, null, null);
+        }
+        window.addEventListener('popstate', (event) => {
+            if (!event.originalEvent.state) {
                 history.pushState(null, null, null);
-                history.pushState(null, null, null);
+                return;
             }
-            window.addEventListener('popstate', (event) => {
-                if (!event.originalEvent.state) {
-                    history.pushState(null, null, null);
-                    return;
-                }
-            });
+        });
+        
+        window.document.onkeydown = function(event){
+            if(event.keyCode >= 112 && event.keyCode <= 123) {
+                event.keyCode = null;
+                event.returnValue = false;
+                window.alert('あんたホントに馬鹿ですね。');
+            }
+        };
         </script>
     </head>
-    <body>
+    <body onContextmenu="window.alert('あんたホントに馬鹿ですね。');return false">
         <script>
-            var music = new Audio("youare.mp3");
-            music.play();
+        var music = new Audio("youare.mp3");
+        music.play();
         </script>
         <video src="youare.mp4" type="video/mp4" id="main" autoplay muted onended="location.href='https://ware255.github.io/open.html';">
         </video>
         <script>
-            music.stop();
+        music.stop();
         </script>
     </body>
 </html>
