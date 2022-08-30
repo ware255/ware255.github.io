@@ -14,4 +14,6 @@ function getRealAddress() {
     }
     return $ip;
 }
+
+$realAddress = getRealAddress();
 ?>
