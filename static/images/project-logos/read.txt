@@ -1,1 +1,0 @@
-url(/static/images/project-logos/jawiki.png)
